@@ -1,7 +1,16 @@
 import java.util.Random;
 import java.util.Scanner;
 
+
 public class App {
+
+static int[] loss(int size){
+    int fält[] = new int[size];
+    for(int i = 0; i<size; i++){
+        fält[i] = i;
+    }
+    return fält;
+}
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
 
@@ -37,9 +46,8 @@ while (score>0 && score2>0) {
         
             default:
                 System.out.println("Generating random number for bot");
-                kb.nextLine();
-
                 System.out.println("Opponent number:" +num2);
+                kb.nextLine();
                 break; 
                 }
 
@@ -50,31 +58,30 @@ while (score>0 && score2>0) {
                     score--;
                     kb.nextLine();
                     System.out.println("You have "+score+" points");
+                    System.out.println("Your opponent has " +score2+" points");
+                    kb.nextLine();
                 }
                 else{
                     System.out.println("You WIN");
                     score2--;
                     kb.nextLine();
                     System.out.println("You have "+score+" points");
+                    System.out.println("Your opponent has " +score2+" points");
+                    kb.nextLine();
                     }
                     
-                    
-            
         }
-        if (score2==0) {
+        if (score2<1) {
 
-            System.out.println("GAME OVER!");
-            
-        }
-
-        if (score==0) {
-
-            System.out.println("GAME OVER!");
+            System.out.println("WINNER");
             
         }
 
+        if (score<1) {
 
-
+            int[] fält = loss(500);
+            
+        }
     } 
 }
 
