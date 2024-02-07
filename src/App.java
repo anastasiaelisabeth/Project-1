@@ -8,6 +8,7 @@ public class App {
         Scanner kb = new Scanner(System.in);
 
         int score = 20;
+        int score2 = 20;
 
         System.out.println("Starting game");
         kb.nextLine();
@@ -16,15 +17,14 @@ public class App {
         System.out.println("Generating random number between 0 and 8");
         kb.nextLine();
         
-        Random rando = new Random();
+while (score>0 && score2>0) {
+
+    Random rando = new Random();
         int  num1 = rando.nextInt(9);
-        System.out.println("Random number:" +num1);
+        System.out.println("Your number:" +num1);
 
         Random rando2 = new Random();
-                int num2 = rando2.nextInt(9);
-
-
-while (score>0) {
+        int num2 = rando2.nextInt(9);
     
 
         switch (num1) {
@@ -39,27 +39,37 @@ while (score>0) {
                 System.out.println("Generating random number for bot");
                 kb.nextLine();
 
-                System.out.println("Random number:" +num2);
+                System.out.println("Opponent number:" +num2);
                 break; 
-            }
+                }
 
                 int diff = num1-num2;
 
-                if (diff<0) {
+        if (diff<1) {
                     System.out.println("You Lost");
                     score--;
                     kb.nextLine();
-                    System.out.println("You hav"+score+"points");
+                    System.out.println("You have "+score+" points");
                 }
                 else{
                     System.out.println("You WIN");
-                    score++;
+                    score2--;
                     kb.nextLine();
-                    System.out.println("You have"+score+"points");
-                        break;
+                    System.out.println("You have "+score+" points");
                     }
                     
                     
+            
+        }
+        if (score2==0) {
+
+            System.out.println("GAME OVER!");
+            
+        }
+
+        if (score==0) {
+
+            System.out.println("GAME OVER!");
             
         }
 
