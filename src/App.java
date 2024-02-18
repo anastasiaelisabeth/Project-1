@@ -96,7 +96,7 @@ while (score>0 && score2>0) {
         if (score<1) {
 
             int size;
-            String[] fält = loss(50000);
+            String[] fält = loss(500);
             for(int i = 0; i<fält.length; i++)
             {
                 System.out.print(fält[i]);
